@@ -101,7 +101,7 @@
             <ul>
                 <li><span class="category">Wifi:</span> {{wifipassword}}</li>
                 <li><span class="category">Outlets:</span> {{outlets}}</li>
-                <li><span class="category">No more place to sit:</span> {{couch}}</li>
+                <li><span class="category">Couch:</span> {{couch}}</li>
                 <li><span class="category">Large Table:</span> {{largetable}}</li>
                 <li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
                 <li><span class="category">Brewing:</span> {{brewing}}</li>
@@ -133,7 +133,7 @@
 
             // create geoJSON with coordinates and other
             // useful bits from the original data
-            var optionsJSON = ["name", "address", "city", "rowNumber"]
+            var optionsJSON = ["name", "address", "Price", "rowNumber"]
             var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON)
 
             // create map, tilelayer (map background), markers and popups
@@ -176,7 +176,7 @@
                 var latestCompleteSpot = []
                 var startWithLatestRow = data.reverse()
                 startWithLatestRow.forEach(function(row){
-                    if (!row.lat || !row.long || !row.name || !row.address || !row.city || !row.state ) return
+                    if (!row.lat || !row.long || !row.name || !row.address || !row.price || !row.onion,garlic ) return
                     else latestCompleteSpot.push(row)
                 })
                 return latestCompleteSpot[0]
